@@ -1,0 +1,43 @@
+<script type="text/javascript">
+  RED.nodes.registerType("watson-speech-to-text-lite", {
+    category: "function",
+    color: "#cc0066",
+    defaults: {
+      name: { value: "" },
+      apikey: { value: "" },
+      url: { value: "" }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: "file.png",
+    label: function() {
+      return this.name || "watson-speech-to-text-lite";
+    }
+  });
+</script>
+
+<script type="text/x-red" data-template-name="watson-speech-to-text-lite">
+  <div class="form-row">
+      <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+      <input type="text" id="node-input-name" placeholder="Name"><br>
+      <label for="node-input-apikey"><i class="icon-tag"></i> ApiKey</label>
+      <input type="text" id="node-input-apikey" placeholder="Name"><br>
+      <label for="node-input-url"><i class="icon-tag"></i> URL</label>
+      <input type="text" id="node-input-url" placeholder="url">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="watson-speech-to-text-lite">
+  <h1>Watson Speech to text Recorder</h1>
+  <p>This node does speech to text and record user's voice directly from microphone and stops recording if slience is detected</p>
+  <p><u>Input</u></p>
+  <ul>
+  	<li><code>msg.payload = { mode: "start" }</code>: start (or empty) - Start recording</li>
+  	<li><code>msg.payload = { mode: "stop" }</code>: stop - Stop recording</li>
+  </ul>
+  <p><u>Output</u></p>
+  <ul>
+  	<li><code>msg.payload.status</code>: 200, 403, 404 </li>
+  	<li><code>msg.payload.text</code>: Recognized speech in text</li>
+  </ul>
+</script>

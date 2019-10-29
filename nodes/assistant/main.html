@@ -1,0 +1,51 @@
+<script type="text/javascript">
+  RED.nodes.registerType("watson-assistant-lite", {
+    category: "function",
+    color: "#669900",
+    defaults: {
+      name: { value: "" },
+      apikey: { value: "" },
+      url: { value: "" },
+      assistantId: { value: "" }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: "file.png",
+    label: function() {
+      return this.name || "watson-assistant-lite";
+    }
+  });
+</script>
+
+<script type="text/x-red" data-template-name="watson-assistant-lite">
+  <div class="form-row">
+      <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+      <input type="text" id="node-input-name" placeholder="Name"><br>
+      <label for="node-input-apikey"><i class="icon-tag"></i> ApiKey</label>
+      <input type="text" id="node-input-apikey" placeholder="ApiKey"><br>
+      <label for="node-input-url"><i class="icon-tag"></i>URL</label>
+      <input type="text" id="node-input-url" placeholder="url"><br>
+      <label for="node-input-assistantId"><i class="icon-tag"></i> assistantId</label>
+      <input type="text" id="node-input-assistantId" placeholder="assistantId"><br>
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="watson-assistant-lite">
+  <h1>Watson Assistant</h1>
+  <p>This node takes string input and returns watson response with string output</p>
+  <p><u>Input</u></p>
+  <ul>
+    <li><code>msg.payload = { text: "your_input", mode: "create/delete/continue" }</code><br>
+      <code>create:</code> create a new conversation and talk to watson - Default Value<br>
+      <code>delete:</code>  delete existing conversation progress<br>
+      <code>continue:</code>  use existing conversation session and talk to watson
+      <br>
+      <code>text:</code> a string variable to feed watson, watson will answer depends on this variable
+    </li>
+
+  </ul>
+  <p><u>Output</u></p>
+  <ul>
+  	<li><code>generic, intents, entities</code></li>
+  </ul>
+</script>

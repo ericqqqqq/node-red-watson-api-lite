@@ -1,0 +1,41 @@
+<script type="text/javascript">
+  RED.nodes.registerType("watson-text-to-speech-lite", {
+    category: "function",
+    color: "#3366ff",
+    defaults: {
+      name: { value: "" },
+      apikey: { value: "" },
+      url: { value: "" }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: "file.png",
+    label: function() {
+      return this.name || "watson-text-to-speech-lite";
+    }
+  });
+</script>
+
+<script type="text/x-red" data-template-name="watson-text-to-speech-lite">
+  <div class="form-row">
+      <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+      <input type="text" id="node-input-name" placeholder="Name"><br>
+      <label for="node-input-apikey"><i class="icon-tag"></i> ApiKey</label>
+      <input type="text" id="node-input-apikey" placeholder="ApiKey"><br>
+      <label for="node-input-url"><i class="icon-tag"></i> URL</label>
+      <input type="text" id="node-input-url" placeholder="url">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="watson-text-to-speech-lite">
+  <h1>Watson Text to Speech</h1>
+  <p>This node takes string input and returns watson response with string output</p>
+  <p><u>Input</u></p>
+  <ul>
+    <li><code>msg.payload = { text: "your_text" }</code></li>
+  </ul>
+  <p><u>Output</u></p>
+  <ul>
+    <li>wav Buffer</li>
+  </ul>
+</script>

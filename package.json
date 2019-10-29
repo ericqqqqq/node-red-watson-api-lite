@@ -1,0 +1,24 @@
+{
+  "name": "node-red-watson-api-lite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [ "watson", "node-red", "speech-to-text", "chat" ],
+  "node-red": {
+    "nodes": {
+      "watson-speech-to-text-lite": "nodes/speech-to-text/main.js",
+      "watson-assistant-lite": "nodes/assistant/main.js",
+      "watson-text-to-speech-lite": "nodes/text-to-speech/main.js"
+    }
+  },
+  "dependencies": {
+    "ibm-watson": "^5.1.0",
+    "mic": "^2.1.2",
+    "wav": "^1.0.2"
+  }
+}
