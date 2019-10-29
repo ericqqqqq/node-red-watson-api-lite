@@ -8,7 +8,7 @@
   },
   "author": "",
   "license": "ISC",
-  "keywords": [ "watson", "node-red", "speech-to-text", "chat" ],
+  "keywords": [ "watson", "node-red", "speech-to-text", "text-to-speech", "lite" ],
   "node-red": {
     "nodes": {
       "watson-speech-to-text-lite": "nodes/speech-to-text/main.js",
